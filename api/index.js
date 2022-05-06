@@ -12,6 +12,7 @@ async function main() {
   await mongoose.connect(process.env.DATABASE);
 }
 
+
 app.use(express.json())
 app.use("/api/auth", authRoute);
 
