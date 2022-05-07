@@ -62,7 +62,7 @@ router.get("/find/:id", verify, async (req, res) => {
 
 //Get random
 router.get("/random", verify, async (req, res) => {
-  const type = req.query.try;
+  const type = req.query.type;
   let movie;
   try {
     if (type === "series") {
