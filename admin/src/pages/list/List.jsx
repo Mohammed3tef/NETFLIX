@@ -31,7 +31,6 @@ export default function List() {
               <span className="productInfoKey">type:</span>
               <span className="productInfoValue">{list.type}</span>
             </div>
-
           </div>
         </div>
       </div>
@@ -46,7 +45,6 @@ export default function List() {
             <input type="text" placeholder={list.genra} />
           </div>
           <div className="productFormRight">
-            
             <button className="productButton">Update</button>
           </div>
         </form>

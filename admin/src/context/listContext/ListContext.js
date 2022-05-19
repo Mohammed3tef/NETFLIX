@@ -9,7 +9,7 @@ const INITIAL_STATE = {
 
 export const ListContext = createContext(INITIAL_STATE);
 
-export const MovieContextProvider = ({ children }) => {
+export const ListContextProvider = ({ children }) => {
   const [state, dispatch] = useReducer(ListReducer, INITIAL_STATE);
 
   return (

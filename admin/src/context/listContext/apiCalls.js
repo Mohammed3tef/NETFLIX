@@ -1,6 +1,5 @@
 import axios from "axios";
 import {
-  
   createListFailure,
   createListStart,
   createListSuccess,
@@ -8,7 +7,8 @@ import {
   deleteListStart,
   deleteListSuccess,
   getListsFailure,
-  getListssStart, getListsSuccess,
+  getListssStart,
+  getListsSuccess,
 } from "./ListActions";
 
 export const getLists = async (dispatch) => {
@@ -29,7 +29,7 @@ export const getLists = async (dispatch) => {
 export const createList = async (list, dispatch) => {
   dispatch(createListStart());
   try {
-    const res = await axios.post("/lists", list , {
+    const res = await axios.post("/lists", list, {
       hearders: {
         token: "Bearer" + JSON.parse(localStorage.getItem("user")).accessToken,
       },
@@ -40,10 +40,10 @@ export const createList = async (list, dispatch) => {
   }
 };
 
-export const deleteList = async (id,dispatch) => {
+export const deleteList = async (id, dispatch) => {
   dispatch(deleteListStart());
   try {
-    await axios.delete("/lists"+id, {
+    await axios.delete("/lists" + id, {
       hearders: {
         token: "Bearer" + JSON.parse(localStorage.getItem("user")).accessToken,
       },

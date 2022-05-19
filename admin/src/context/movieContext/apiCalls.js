@@ -1,6 +1,5 @@
 import axios from "axios";
 import {
-  
   createMovieFailure,
   createMovieStart,
   createMovieSuccess,
@@ -30,7 +29,7 @@ export const getMovies = async (dispatch) => {
 export const createMovie = async (movie, dispatch) => {
   dispatch(createMovieStart());
   try {
-    const res = await axios.post("/movies", movie , {
+    const res = await axios.post("/movies", movie, {
       hearders: {
         token: "Bearer" + JSON.parse(localStorage.getItem("user")).accessToken,
       },
@@ -41,10 +40,10 @@ export const createMovie = async (movie, dispatch) => {
   }
 };
 
-export const deleteMovie = async (id,dispatch) => {
+export const deleteMovie = async (id, dispatch) => {
   dispatch(deleteMovieStart());
   try {
-    await axios.delete("/movies"+id, {
+    await axios.delete("/movies" + id, {
       hearders: {
         token: "Bearer" + JSON.parse(localStorage.getItem("user")).accessToken,
       },
